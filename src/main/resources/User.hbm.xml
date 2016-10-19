@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="model">
+
+	<class name="model.User"  table="USER">
+	
+		<id name="idU" type="int" column="ID">
+			<generator class="identity" />
+				
+		</id>
+		
+		<property name="email" column="EMAIL" />
+		<property name="login" column="LOGIN" />
+		<property name="password" column="PASSWORD" />
+		
+		
+		 <Set name="roles" cascade="save-update" table="ROLE-USER" not-null="true" inverse="true">
+        <key column="idU" />
+			<element type="string" column="Role"/>
+         <many-to-many column="idR" class="Role"/>
+      </Set>
+		
+	
+			
+	</class>
+
+</hibernate-mapping>
