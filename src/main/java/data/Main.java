@@ -20,15 +20,15 @@ public class Main {
 		User user2 = new User(null, "mail","log2","pas2");
 		User user3 = new User(null, "mail","log3","pas3");
 		
-		Role role1 = new Role(101L,"xd","xd");
-		Role role2 = new Role(102L,"xd","dd");
-		Role role3 = new Role(103L,"gt","gt");
-		Role role4 = new Role(104L,"gt","gt");
-		Role role5 = new Role(105L,"gt","y");
-		Role role6 = new Role(106L,"hy","hy");
+		Role role1 = new Role(null,"xd","xd");
+		Role role2 = new Role(null,"xd","dd");
+		Role role3 = new Role(null,"gt","gt");
+		Role role4 = new Role(null,"gt","gt");
+		Role role5 = new Role(null,"gt","y");
+		Role role6 = new Role(null,"hy","hy");
 		
 		//ArrayList <Role>  roles = new ArrayList<>();
-		HashSet roles = new HashSet() ;
+		List<Role> roles = new ArrayList<Role>() ;
 		
 		
 		roles.add(role1);
@@ -48,12 +48,12 @@ public class Main {
 		user1.setRoles(roles);
 		
 		hudao.insert(user1);
-		hudao.insert(user2);
+	hudao.insert(user2);
 		hudao.insert(user3);
 		
 		
 		
-		//hudao.delete(user2);
+		hudao.delete(user2);
 		
 		
 		

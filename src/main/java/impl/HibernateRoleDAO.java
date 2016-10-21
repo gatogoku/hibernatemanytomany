@@ -2,12 +2,12 @@ package impl;
 
 import java.util.List;
 
-import javax.management.relation.Role;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import dao.RoleDAO;
+import model.Role;
 import data.HibernateSession;
 
 public class HibernateRoleDAO implements RoleDAO{
@@ -40,13 +40,13 @@ public class HibernateRoleDAO implements RoleDAO{
 
 	public void insert(Role role) {
 		// TODO Auto-generated method stub
-		/*initializaSession();
+		initializaSession();
 		session.beginTransaction();
-		Long id =  (Long) session.save(role);
-		role.setRoleName(role.getRoleName());
-		//role.setRoleValue();
+		//Long id =  (Long) session.save(role);
+		role.setIdR(role.getIdR());
+		
 		session.getTransaction().commit();
-		session.close();*/
+		session.close();
 		
 	}
 

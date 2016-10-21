@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -10,15 +11,10 @@ public class User {
 	String email;
 	String login;
 	String password;
-	HashSet roles = new HashSet() ;
+	List<Role> roles = new ArrayList<Role>() ;
 	
 	
-	public HashSet getRoles() {
-		return roles;
-	}
-	public void setRoles(HashSet roles) {
-		this.roles = roles;
-	}
+	
 	public User(){}
 	public User(Long id, String email, String login, String password) {
 		super();
@@ -53,5 +49,12 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public List<Role> getRoles() {
+		return roles;
+	}
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
 	
 }

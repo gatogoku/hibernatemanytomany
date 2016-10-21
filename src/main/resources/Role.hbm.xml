@@ -9,7 +9,7 @@
 
 	<class name="model.Role" table="ROLE">
 	
-		<id name="idR" type="int" column="ID">
+		<id name="idR"  column="ID">
 			<generator class="identity" />
 				
 		</id>

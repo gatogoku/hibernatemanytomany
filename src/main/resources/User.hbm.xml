@@ -9,7 +9,7 @@
 
 	<class name="model.User"  table="USER">
 	
-		<id name="idU" type="int" column="ID">
+		<id name="idU" column="ID">
 			<generator class="identity" />
 				
 		</id>
@@ -19,14 +19,32 @@
 		<property name="password" column="PASSWORD" />
 		
 		
-		 <Set name="roles" cascade="save-update" table="ROLE-USER" not-null="true" inverse="true">
+		
+      
+      
+       <list name="roles" cascade="all" table="ROLE_USER"  >
         <key column="idU" />
-			<element type="string" column="Role"/>
+			<list-index column="idR" />
+		
          <many-to-many column="idR" class="Role"/>
-      </Set>
+      </list>
+      
+      
+      <list name="subjects" table="students_subjects" cascade="all-delete-orphan">
+			<key column="student_id" />
+			<list-index column="list_order" />
+			<many-to-many class="Subject" column="subject_id" />
+		</list>
+     
 		
 	
 			
 	</class>
+	
+	
+	
+
+	
+	
 
 </hibernate-mapping>

@@ -2,7 +2,7 @@ package dao;
 
 import java.util.List;
 
-import javax.management.relation.Role;
+import model.Role;
 
 public interface RoleDAO {
 	
