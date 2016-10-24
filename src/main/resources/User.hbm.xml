@@ -1,50 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="model">
+<!--   -->
 
-	<class name="model.User"  table="USER">
-	
-		<id name="idU" column="ID">
-			<generator class="identity" />
-				
-		</id>
-		
-		<property name="email" column="EMAIL" />
-		<property name="login" column="LOGIN" />
-		<property name="password" column="PASSWORD" />
-		
-		
-		
-      
-      
-       <list name="roles" cascade="all" table="ROLE_USER"  >
-        <key column="idU" />
-			<list-index column="idR" />
-		
-         <many-to-many column="idR" class="Role"/>
-      </list>
-      
-      
-      <list name="subjects" table="students_subjects" cascade="all-delete-orphan">
-			<key column="student_id" />
-			<list-index column="list_order" />
-			<many-to-many class="Subject" column="subject_id" />
-		</list>
-     
-		
-	
-			
-	</class>
-	
-	
-	
+<class name="User" table="USER">
+        <id name="idU" column="ID">
+            <generator class="native"/>
+        </id>
+        <property name="login" column="LOGIN" />
+        <property name="password" column="PASSWORD"/>
+        <property name="email" column="EMAIL"/>
+        
+       
+        
+        <set name="roles" table="ROLE_USER"
+           inverse="false" lazy="false" fetch="select" cascade="all">
+            <key column="idU" />
+            <many-to-many column="idR" class="Role" />
+        </set>
+        
+       
 
+    </class>
 	
-	
-
 </hibernate-mapping>

@@ -17,7 +17,11 @@
 		<property name="description" column="DESCRIPTION" />
 		<property name="name" column="NAME" />
 		
-		
+		<set name="users" table="ROLE_USER"
+           inverse="true" lazy="false" fetch="select">
+            <key column="idU" />
+            <many-to-many column="idR" class="Role" />
+        </set>
 		
 	</class>
 

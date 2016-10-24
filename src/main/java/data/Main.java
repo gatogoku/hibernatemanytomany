@@ -28,38 +28,38 @@ public class Main {
 		Role role6 = new Role(null,"hy","hy");
 		
 		//ArrayList <Role>  roles = new ArrayList<>();
-		List<Role> roles = new ArrayList<Role>() ;
+		//List<Role> roles = new ArrayList<Role>() ;
 		
+		HibernateUserDAO hudao = new HibernateUserDAO();
+		HibernateRoleDAO hrdao = new HibernateRoleDAO();
+		
+		/*hrdao.insert(role1);
+		hrdao.insert(role2);
+		hrdao.insert(role3);*/
+		
+		Set <Role> roles = new HashSet<Role>();
 		
 		roles.add(role1);
 		roles.add(role2);
 		roles.add(role3);
 		
-		
-		
-		 // HibernateSession hs = new HibernateSession();hs.getSession();
-		 
-		//List roless = roles;
-		
-		HibernateUserDAO hudao = new HibernateUserDAO();
-		HibernateRoleDAO hrdao = new HibernateRoleDAO();
-		
-		
+//
 		user1.setRoles(roles);
-		
+//		
+//		//hrdao.insert(role1);
+//		
 		hudao.insert(user1);
-	hudao.insert(user2);
-		hudao.insert(user3);
-		
-		
-		
-		hudao.delete(user2);
-		
-		
-		
-		
-		
-
+//		//hudao.insert(user2);
+//		//hudao.insert(user3);
+//		
+//	
+//		//hudao.delete(user2);
+//		
+//		
+//		
+//		
+//		
+//
 	}
 
 }

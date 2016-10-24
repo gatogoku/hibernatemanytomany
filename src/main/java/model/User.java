@@ -11,8 +11,8 @@ public class User {
 	String email;
 	String login;
 	String password;
-	List<Role> roles = new ArrayList<Role>() ;
-	
+	//List<Role> roles = new ArrayList<Role>() ;
+	Set <Role> roles = new HashSet<Role>();
 	
 	
 	public User(){}
@@ -49,12 +49,20 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public List<Role> getRoles() {
+	/*public List<Role> getRoles() {
 		return roles;
 	}
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}*/
+	public Set<Role> getRoles() {
+		return roles;
 	}
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
+	
+	
 
 	
 }

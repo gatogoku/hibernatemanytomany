@@ -44,7 +44,7 @@ public class HibernateRoleDAO implements RoleDAO{
 		session.beginTransaction();
 		//Long id =  (Long) session.save(role);
 		role.setIdR(role.getIdR());
-		
+		session.save(role);
 		session.getTransaction().commit();
 		session.close();
 		
